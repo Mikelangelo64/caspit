@@ -1,0 +1,65 @@
+
+@font-face {
+  font-family: 'Circle';
+  src: url('../assets/fonts/Circe-Thin.eot');
+  src: url('../assets/fonts/Circe-Thin.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Circe-Thin.woff2') format('woff2'),
+    url('../assets/fonts/Circe-Thin.woff') format('woff'),
+    url('../assets/fonts/Circe-Thin.ttf') format('truetype'),
+    url('../assets/fonts/Circe-Thin.svg#Circe-Thin') format('svg');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circle';
+  src: url('../assets/fonts/Circe-Light.eot');
+  src: url('../assets/fonts/Circe-Light.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Circe-Light.woff2') format('woff2'),
+    url('../assets/fonts/Circe-Light.woff') format('woff'),
+    url('../assets/fonts/Circe-Light.ttf') format('truetype'),
+    url('../assets/fonts/Circe-Light.svg#Circe-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circle';
+  src: url('../assets/fonts/Circe-Regular.eot');
+  src: url('../assets/fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Circe-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Circe-Regular.woff') format('woff'),
+    url('../assets/fonts/Circe-Regular.ttf') format('truetype'),
+    url('../assets/fonts/Circe-Regular.svg#Circe-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circle';
+  src: url('../assets/fonts/Circe-ExtraBold.eot');
+  src: url('../assets/fonts/Circe-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Circe-ExtraBold.woff2') format('woff2'),
+    url('../assets/fonts/Circe-ExtraBold.woff') format('woff'),
+    url('../assets/fonts/Circe-ExtraBold.ttf') format('truetype'),
+    url('../assets/fonts/Circe-ExtraBold.svg#Circe-ExtraBold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circle';
+  src: url('../assets/fonts/Circe-Bold.eot');
+  src: url('../assets/fonts/Circe-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/Circe-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Circe-Bold.woff') format('woff'),
+    url('../assets/fonts/Circe-Bold.ttf') format('truetype'),
+    url('../assets/fonts/Circe-Bold.svg#Circe-Bold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,41 @@
+//- p.banner__title.show-animation__item(
+//-   data-delay='3000',
+//-   data-duration='3000',
+//-   data-animation='fadeInUp'
+//- ) Group of companies
+
+section.banner.show-animation
+  .banner-bg.show-animation__item(data-duration='3500')
+    .banner-bg__media
+      video.video(
+        disablePictureInPicture,
+        preload='metadata',
+        playsinline,
+        loop,
+        muted,
+        autoplay
+      ) 
+        source(data-src=require('@/assets/video/banner.mp4'), type='video/mp4')
+
+  ._container.banner__container
+    .banner__wrapper
+      .banner__item
+        p.banner__title.show-animation__item Group of companies
+
+        .logo-link.banner__logo.show-animation__item(
+          data-duration='2000',
+          data-animation='fadeInUp'
+        )
+          img.desktop(
+            src=require('@/assets/img/logo.svg'),
+            alt='logo',
+            draggable='false'
+          )
+          img.mobile(
+            src=require('@/assets/img/logo-light.svg'),
+            alt='logo',
+            draggable='false'
+          )
+
+      .banner__item.light
+        p.banner__description The company’s major business lines are petrochemistry, liquefied gas, renewable energy and fertilizers. Caspit has its own production and logistics infrastructure.

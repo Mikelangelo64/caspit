@@ -1,0 +1,70 @@
+.section.contacts.show-animation
+  ._container.contacts__container
+    .contacts__wrapper
+      .contacts__info
+        .contacts__header.show-animation__item(
+          data-duration='800',
+          data-animation='fadeIn'
+        )
+          p.contacts__title Group of companies
+
+          .logo-link.contacts__logo
+            img(
+              src=require('@/assets/img/logo.svg'),
+              alt='logo',
+              draggable='false'
+            )
+
+        p.contacts__description.desktop For any requests, call or us of fill in the feedback form, we’ll come back to you shortly.
+
+        ul.contacts-list
+          li
+            a.contacts__link(href='tel:+35722052918') +357 220 529 18
+
+          li
+            a.contacts__link(
+              href='https://goo.gl/maps/8CgZu4ivNTLRwDZA6',
+              target='_blank',
+              rel='noreferrer'
+            ) 17 Ifigeneias Street 2007 Strovolos, Nicosia Cyprus
+
+        p.contacts__description.mobile For any requests, call or us of fill in the feedback form, we’ll come back to you shortly.
+
+      form.contacts-form.form(action='post')
+        div
+          label(for='name') 
+            strong Name
+            input#name(type='text', name='name', placeholder='Name')
+            span.wpcf7-not-valid-tip Невірний формат
+
+        div
+          label(for='email') 
+            strong Email
+            input#email(type='email', name='email', placeholder='Email')
+            span.wpcf7-not-valid-tip Невірний формат
+
+        div
+          label(for='telephone') 
+            strong Phone
+            input#telephone(type='tel', name='telephone', placeholder='Phone')
+            span.wpcf7-not-valid-tip Невірний формат
+
+        div
+          label(for='company') 
+            strong Company
+            input#company(type='text', name='company', placeholder='Company')
+            span.wpcf7-not-valid-tip Невірний формат
+
+        div
+          label(for='title') 
+            strong Title
+            input#title(type='text', name='title', placeholder='Title')
+            span.wpcf7-not-valid-tip Невірний формат
+
+        div
+          label(for='request') 
+            strong Your request
+            textarea#request(name='request', placeholder='Your Request')
+            span.wpcf7-not-valid-tip Невірний формат
+
+        button(type='submit') Send

@@ -1,0 +1,111 @@
+@import '../base';
+
+.footer {
+  overflow: hidden;
+
+  @include viewport-tablet-min {
+    padding-bottom: px-to-rem(60);
+  }
+  @include viewport-phone {
+    padding-bottom: px-to-rem(24);
+  }
+
+  //.footer__container 
+  &__container {
+    @include viewport-desktop {
+      padding-left: var(--wrap-1);
+      padding-right: var(--wrap-1);
+    }
+  }
+  
+  //.footer__wrapper 
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+
+    font-weight: 500;
+    line-height: 150%;
+    font-size: px-to-rem(16);
+    color: var(--color-black-100);
+  }
+  
+  //.footer__link 
+  &__link {
+    padding: px-to-rem(8);
+    margin-left: px-to-rem(-8);
+
+    @include transition(color 0.4s);
+    line-height: 156%;
+    text-decoration: unset;
+    color: inherit;
+
+    @include hover-focus-visible {
+      @include non-mobile-device {
+        color: var(--color-red-100);
+      }
+    }
+  }
+  
+  //.footer__impulse 
+  &__impulse {
+    flex-shrink: 0;
+    display: inline-flex;
+    width: max-content;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(#{px-to-rem(24)} + 2 * #{px-to-rem(18)});
+
+      padding: px-to-rem(18);
+      margin: px-to-rem(-18);
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    p {
+      margin-right: px-to-rem(10);
+    }
+  }
+  
+  //.footer-menu 
+  &-menu {
+    width: 100%;
+
+    @include viewport-tablet-min {
+      max-width: px-to-rem(680);
+    }
+
+    //.footer-menu-list 
+    &-list {
+      display: grid;
+
+      @include viewport-tablet-min {
+        grid-template-columns: repeat(2, 1fr);
+        gap: px-to-rem(48);
+      }
+
+      @include viewport-phone {
+        grid-template-columns: 1fr;
+        gap: px-to-rem(16);
+      }
+
+      //.footer-menu-list__column 
+      &__column {
+        > * + * {
+          margin-top: px-to-rem(16);
+        }
+      }
+      
+      //.footer-menu-list__item 
+      // &__item {
+      // }
+    }
+  }
+}

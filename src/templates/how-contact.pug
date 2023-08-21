@@ -1,0 +1,54 @@
+-
+  const howContactList = [
+    {
+      title: 'As investors',
+      description: `We are opened to co-founding various forward-looking infrastructure projects. Through our capacities we can give you a hand with tackling demanding projects, making sure it’s a smart investment. Up our sleeve we have a number of innovative ideas that can bolster the market, concurrently raising our efficacy. `,
+      popupName: '_popup-form-investor',
+      buttonName: 'Appoint a meeting'
+    },
+    {
+      title: 'As partners',
+      description: `We stand ready to integrate your projects to our ecosystem in case it does not yield to desired results. Your projects will get a second-wind via our vetted distribution, logistics and storage capacities; In case you might want to unload the operational burden, we are also opened to take it over and reduce costs.`,
+      popupName: '_popup-form-partner',
+      buttonName: 'Become a partner'
+    }
+  ];
+
+section.how-contact.show-animation
+  ._container.how-contact__container
+    .how-contact__wrapper
+      h2.show-animation__item.how-contact__title(
+        data-duration='800',
+        data-animation='fadeInLeft'
+      ) How can you contact us
+
+      ul.how-contact-list
+        each item, index in howContactList
+          li.how-contact-list__item
+            .how-contact-list__bg
+              .how-contact-list__bg__container
+                img.show-animation__item(
+                  data-duration=`${400 + index * 700}`,
+                  data-animation='fadeInRightUp',
+                  src=require('@/assets/img/how-contact.svg'),
+                  alt=`${item.title}`
+                )
+
+            .how-contact-list__content
+              h3.how-contact-list__title.show-animation__item(
+                data-duration=`${400 + index * 700}`,
+                data-animation='fadeInLeft'
+              ) #{ item.title }
+
+              p.show-animation__item.how-contact-list__description(
+                data-duration=`${1200 + index * 700}`,
+                data-animation='fadeInLeft'
+              )!= item.description
+
+              button.show-animation__item.how-contact-list__button.button-dark.popup-open(
+                data-duration=`${1200 + index * 700}`,
+                data-animation='fadeInLeft'
+              )(
+                data-popup=`${item.popupName}`,
+                title='open menu'
+              ) #{ item.buttonName }

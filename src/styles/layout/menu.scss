@@ -1,0 +1,46 @@
+@import '../base';
+
+.menu {
+  text-align: left;
+
+  > * + * {
+    margin-top: px-to-rem(60);
+  }
+
+  //.menu__address 
+  &__address {
+    display: block;
+
+    font-weight: 400;
+    font-size: px-to-rem(13);
+    color: inherit;
+  }
+  
+  //.menu__link 
+  &__link {
+    @include transition(color 0.4s);
+
+    text-decoration: unset;
+    color: inherit;
+
+    @include hover-focus-visible {
+      @include non-mobile-device {
+        color: var(--color-red-100);
+      }
+    }
+  }  
+
+  //.menu-list 
+  &-list {
+    font-weight: 500;
+    font-size: px-to-rem(20);
+
+    > * + * {
+      margin-top: px-to-rem(45);
+    }
+
+    //.menu-list__item 
+    // &__item {
+    // }    
+  }
+}

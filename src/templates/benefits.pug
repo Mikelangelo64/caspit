@@ -1,0 +1,33 @@
+-
+  const benefitsArray = [
+    {
+      title: 'Advanced infrastructure',
+      description: `
+        Due to an array of dedicated companies under our rule we are able to commit to full cycle of goods reach. With own production, warehouses, logistic and vehicle fleet, the advanced infrastructure enables us to be on point with deadlines and be rock-solid when it comes to execution of daily operations. 
+        <br/>
+        <br/>
+        Therefore we invest a major chunk of investments in extending the development of the infrastructure and bringing in new companies. CASPIT’s team delivers results steadily while running operations under unstable economic conditions: thanks to having margin at all stages of our business we are partially safeguarded from downturns.
+      `
+    },
+    {
+      title: 'Spotless public perception',
+      description: `
+        We honor what we do, so do our clients pay us with the same courtesy. The PR track record is clear: thanks to not partaking in political scandals, public conflicts and honouring what we do we are able to uphold the reputation and commit to a constantly high performance/results output for our clients.
+      `
+    }
+  ];
+
+section.benefits.show-animation
+  ._container.benefits__container
+    .benefits__wrapper
+      each item, index in benefitsArray
+        .benefits__item
+          h3.benefits__title.show-animation__item(
+            data-duration=`${800 + index * 700}`,
+            data-animation='fadeInLeft'
+          ) #{ item.title }
+
+          .benefits__description.show-animation__item(
+            data-duration=`${1200 + index * 800}`,
+            data-animation='fadeInLeft'
+          )!= item.description

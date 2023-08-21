@@ -1,0 +1,19 @@
+@import '../base';
+
+.show-animation {
+  //.show-animation__item 
+  &__item {
+    @include non-mobile-device {
+      opacity: 0;  
+      will-change: transform, opacity;
+
+      &[data-animation="no-animate"] {
+        opacity: 1;
+      }
+  
+      &.showed {
+        opacity: 1;
+      }
+    }
+  }
+}

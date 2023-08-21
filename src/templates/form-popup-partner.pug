@@ -1,0 +1,50 @@
+-
+  const actionList = [
+    {
+      title: 'Appoint a meeting',
+      subtitle: 'Fill form and we will contact with you'
+    },
+    {
+      title: 'Become a partner',
+      subtitle: 'Fill form and we will contact with you'
+    }
+  ];
+
+.action
+  .action__header
+    p.action__title Become a partner
+    p.action__subtitle Fill form and we will contact with you
+
+  .action__main
+    form.action-form.form(action='post')
+      div
+        label(for='name') 
+          input#name(type='text', name='name', placeholder='Name')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      div
+        label(for='email') 
+          input#email(type='email', name='email', placeholder='Email')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      div
+        label(for='telephone') 
+          input#telephone(type='tel', name='telephone', placeholder='Phone')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      div
+        label(for='company') 
+          input#company(type='text', name='company', placeholder='Company')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      div
+        label(for='title') 
+          input#title(type='text', name='title', placeholder='Title')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      div
+        label(for='request') 
+          textarea#request(name='request', placeholder='Your Request')
+          span.wpcf7-not-valid-tip Невірний формат
+
+      button(type='submit') Send

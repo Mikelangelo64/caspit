@@ -1,0 +1,70 @@
+-
+  const categoriesList = [
+    {
+      title: 'Petrochemicals',
+      class: 'petrochemicals',
+      description: `<a href="#" target="_blank" rel="noreferrer">SBPM</a> operates in domain of petrochemicals and fertilizers wholesale, while simultaneously strengthening partnership ties with agribusiness. Recently we've set up a licensed customs warehouse of excise goods plus two warehouses with bulk chemistry in Boryspil (Kyiv) and Rivno. SPBM handles a vehicle fleet of 40 tank-vehicles.`,
+      image: '@/assets/img/categories/category-1.jpg'
+    },
+    {
+      title: 'Financing',
+      class: 'financing',
+      description: `<a href="#" target="_blank" rel="noreferrer">LLC Eximleasing</a> is a financial company that meets the needs of farmers in financing equipment, fertilizers, seed materials, and more.`,
+      image: '@/assets/img/categories/category-2.jpg'
+    },
+    {
+      title: 'Solar energy',
+      class: 'solar-energy',
+      description: `<a href="#" target="_blank" rel="noreferrer">ONG Solar</a> designs, constructs and operates solar power plants for industrial sites.`,
+      image: '@/assets/img/categories/category-3.jpg'
+    },
+    {
+      title: 'Fertilizers',
+      class: 'fertilizers',
+      description: `
+        Own production of 
+        <a href="#" target="_blank" rel="noreferrer">Dunger</a>
+        mineral and organomineral fertilizers in Ukraine
+        <br />
+        <br />
+        <a href="#" target="_blank" rel="noreferrer">Agronovation</a>
+        provides a service for introducing technical ammonia into the soil, the project is being implemented in Kazakhstan
+      `,
+      image: '@/assets/img/categories/category-4.jpg'
+    },
+    {
+      title: 'Logistics',
+      class: 'logistics',
+      description: `Cargo Supply enterprise enables our portfolio companies to ship the LPG units to whatever furthest needed destinations. Company disposes gas carriers and tanks to move bulk chemistry units.`,
+      image: '@/assets/img/categories/category-5.jpg'
+    },
+  ];
+
+.categories__list
+  each item, index in categoriesList
+    section.show-animation(
+      class=`categories ${item.class} ${index % 2 === 0 ? '' : 'reverse'}`
+    ) 
+      .categories-bg.show-animation__item(
+        data-duration='100',
+        data-animation='no-animate'
+      )
+        img(
+          src=require(`${item.image}`),
+          alt=`${item.title}`,
+          draggable='false',
+          loading='lazy'
+        )
+
+      ._container.categories__container
+        .categories__wrapper
+          .categories__content
+            h2.categories__title.show-animation__item(
+              data-duration='800',
+              data-animation='fadeInLeft'
+            ) #{ item.title }
+
+            p.categories__description.show-animation__item(
+              data-duration='1200',
+              data-animation='fadeInLeft'
+            )!= item.description

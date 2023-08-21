@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  include @/layout/head.pug
+
+  body
+    include @/layout/header.pug
+
+    include @/templates/banner.pug
+
+    include @/templates/about.pug
+
+    include @/templates/categories.pug
+
+    include @/templates/benefits.pug
+
+    include @/templates/how-contact.pug
+
+    include @/templates/follow.pug
+
+    include @/templates/contacts.pug
+
+    include @/layout/footer.pug
+
+    script(src=require('@/scripts/video.ts')) 
+    script(src=require('./index.ts')) 

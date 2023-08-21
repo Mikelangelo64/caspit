@@ -1,0 +1,101 @@
+@import '../base';
+
+.benefits {
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: px-to-rem(262);
+
+    transform: translate(0, -50%);
+    background-image: url('../assets/img/label-banner.svg');
+    background-repeat: repeat-x;
+    background-position: 0 0;
+
+    animation-name: banner-animation;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+
+    @include viewport-desktop {
+      background-size: 10% 100%;
+      animation-duration: 20s;
+    }
+    @include viewport-tablet {
+      background-size: 20% 100%;
+      animation-duration: 14s;
+    }
+    @include viewport-phone {
+      background-size: 50% 100%;
+      animation-duration: 6s;
+    }
+  
+    @keyframes banner-animation {
+      0% {
+        background-position: 0 0;
+      }
+  
+      100% {
+        background-position: 100% 0;
+      }
+    }
+  }
+
+  //.benefits__container 
+  &__container {
+    position: relative;
+    z-index: 0;
+
+    padding-left: var(--wrap-1);
+    padding-right: var(--wrap-1);
+  }
+
+  //.benefits__wrapper 
+  &__wrapper {
+    display: grid;
+
+    @include viewport-desktop {
+      grid-template-columns: repeat(2, 1fr);
+      gap: px-to-rem(108);
+    }
+    @include viewport-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: px-to-rem(50);
+    }
+    @include viewport-phone {
+      grid-template-columns: 1fr;
+      gap: px-to-rem(56);
+    }
+  }
+
+  //.benefits__item 
+  &__item {
+    > * + * {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(48);
+      }
+      @include viewport-phone {
+        margin-top: px-to-rem(36);
+      }
+    }
+  }
+
+  //.benefits__title 
+  &__title {
+    @include text-heading-2;
+  }
+
+  //.benefits__description 
+  &__description {
+    font-weight: 500;
+    line-height: 150%;
+    font-size: px-to-rem(16);
+  }
+}

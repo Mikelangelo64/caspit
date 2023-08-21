@@ -1,0 +1,105 @@
+-
+  const popupList = [
+    { 
+      name: 'menu', 
+      type: 'menu', 
+      video: '',
+      title: '',
+      subtitle: '',
+      isFullscreenPhone: 'false'
+    }, 
+    { 
+      name: 'about', 
+      type: 'common', 
+      video: '',
+      title: 'popup',
+      subtitle: 'popup',
+      isFullscreenPhone: 'false'
+    },
+    { 
+      name: 'thanks', 
+      type: 'feedback', 
+      video: '',
+      title: 'Спасибо! Мы свяжемся с вами в ближайшее время',
+      subtitle: '',
+      button: '',
+      isFullscreenPhone: 'false'
+    },
+    { 
+      name: 'form-investor', 
+      type: 'form', 
+      video: '',
+      title: '',
+      subtitle: '',
+      button: '',
+      isFullscreenPhone: 'true'
+    },
+    { 
+      name: 'form-partner', 
+      type: 'form', 
+      video: '',
+      title: '',
+      subtitle: '',
+      button: '',
+      isFullscreenPhone: 'true'
+    }
+  ];
+
+each item in popupList
+  div(
+    class=`popup popup-${item.type} ${item.name}__popup ${item.isFullscreenPhone === 'true' ? 'fullscreen-phone': ''}`,
+    data-popupname=`_popup-${item.name}`,
+    aria-modal='true',
+    role='dialog'
+  )
+    .popup__overlay
+
+    .popup__scroll
+      .popup__wrapper
+        button.popup__close
+          img(
+            src=require('@/assets/img/popup-close.svg'),
+            alt='close',
+            draggable='false'
+          )
+
+        .popup__content
+          case item.type 
+            when 'menu'
+              include @/templates/menu.pug
+
+            when 'feedback'
+              .popup__label
+                img(
+                  src=require('@/assets/img/label-thanks.svg'),
+                  alt='thanks',
+                  draggable='false'
+                )
+
+              if item.title
+                p.popup__title #{ item.title }
+
+              if item.subtitle
+                p.popup__subtitle!= item.subtitle
+
+              if item.button
+                button.popup__button.button-light
+                  span #{ item.button }
+
+            when 'form'
+              if (item.name === 'form-investor')
+                include @/templates/form-popup-investor.pug
+
+              if (item.name === 'form-partner')
+                include @/templates/form-popup-partner.pug
+
+            default
+              if item.title
+                p.popup__title #{ item.title }
+
+              if item.subtitle
+                p.popup__subtitle #{ item.subtitle }
+
+              if item.button
+                button.popup__button.button-light
+                  span #{ item.button }

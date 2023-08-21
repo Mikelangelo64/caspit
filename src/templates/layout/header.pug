@@ -1,0 +1,27 @@
+header.header
+  ._container.header__container
+    .header__wrapper
+      .header__item
+        ul.menu__lang
+          li
+            p.lang-item.lang-item-current укр
+          li
+            a.lang-item(href='#') eng
+
+      .header__item.half
+        a.header__phone(href='tel:+35722052918') +357 220 529 18
+
+        button.header-button.popup-open(
+          data-popup='_popup-menu',
+          title='open menu'
+        )
+          span.header-button__title menu
+
+          span.header-button__burger
+            img(
+              src=require('@/assets/img/burger.svg'),
+              alt='burger',
+              draggable='false'
+            )
+
+  include @/layout/popup.pug

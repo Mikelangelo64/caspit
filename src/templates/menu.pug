@@ -1,0 +1,50 @@
+-
+  const menuList = [
+    {
+      name: 'Petrochemicals',
+      href: '#',
+      goto: '.petrochemicals'
+    },
+    {
+      name: 'Financing',
+      href: '#',
+      goto: '.financing'
+    },
+    {
+      name: 'Solar energy',
+      href: '#',
+      goto: '.solar-energy'
+    },
+    {
+      name: 'Fertilizers',
+      href: '#',
+      goto: '.fertilizers'
+    },
+    {
+      name: 'Logistics',
+      href: '#',
+      goto: '.logistics'
+    },
+    {
+      name: 'Contact us',
+      href: '#',
+      goto: '.how-contact'
+    },
+    {
+      name: '+357 220 529 18',
+      href: 'tel:+35722052918',
+      goto: 'false'
+    }
+  ];
+
+nav.menu
+  ul.menu-list
+    each item in menuList
+      li.menu-list__item
+        a.menu__link(
+          class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+          href=`${item.href}`,
+          data-goto=`${item.goto}`
+        ) #{ item.name }
+
+  a.menu__link.menu__address(href='#') 17 Ifigeneias Street 2007 Strovolos, Nicosia Cyprus

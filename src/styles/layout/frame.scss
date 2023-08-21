@@ -1,0 +1,207 @@
+@import '../base';
+
+.frame {
+  overflow: hidden;
+
+  //.frame__container 
+  // &__container {
+  // }
+
+  @include viewport-phone {
+    padding-top: px-to-rem(100);
+  }
+  
+  //.frame__wrapper 
+  &__wrapper {
+    position: relative;
+    z-index: 0;
+
+    padding-left: calc(var(--wrap-1) - var(--wrap));
+    padding-right: calc(var(--wrap-1) - var(--wrap));
+
+    background-color: var(--color-grey);
+
+    @include viewport-desktop {
+      --content-size: #{px-to-rem(700)};
+
+      padding-top: px-to-rem(110);
+      padding-bottom: px-to-rem(70);
+    }
+
+    @include viewport-tablet {
+      --content-size: #{px-to-rem(480)};
+
+      padding-top: px-to-rem(90);
+      padding-bottom: px-to-rem(60);
+    }
+
+    @include viewport-phone {
+      --content-size: #{px-to-rem(480)};
+      --img-shift: #{px-to-rem(-56)};
+
+      padding-top: 0;
+      padding-bottom: px-to-rem(60);
+    }
+
+    @at-root .frame.follow & {
+      color: var(--color-white);
+      background-color: var(--color-red-100);
+
+      @include viewport-desktop {
+        --content-size: #{px-to-rem(590)};
+      }
+
+      @include viewport-tablet {
+        --content-size: #{px-to-rem(390)};
+      }
+    }
+
+    > * + * {
+      @include viewport-phone {
+        margin-top: calc(#{px-to-rem(-40)} + var(--img-shift, #{px-to-rem(-56)}));
+      }
+    }
+  }
+  
+  //.frame__img 
+  &__img {
+    @include viewport-desktop {
+      position: absolute;
+      top: 50%;
+      left: var(--content-size);
+
+      width: 100%;
+      max-width: px-to-rem(646);
+      transform: translate(#{px-to-rem(-50)}, -40%);
+      
+      @media (min-width: 1441px) {
+        left: unset;
+        right: var(--wrap-1);
+        transform: translate(36%, -40%);
+      }
+    }
+    
+    @include viewport-tablet {
+      position: absolute;
+      top: 50%;
+      left: var(--content-size);
+
+      width: 100%;
+      max-width: px-to-rem(676);
+      transform: translate(#{px-to-rem(0)}, -40%);
+    }
+
+    @include viewport-phone {
+      width: calc(100% + 2 * (var(--wrap-1) - var(--wrap)));
+      margin-left: calc(-1 * (var(--wrap-1) - var(--wrap)));
+      transform: translate(0, var(--img-shift, #{px-to-rem(-56)}));
+    }
+
+    @at-root .frame.follow & {
+      @include viewport-desktop {
+        top: 0;
+        left: var(--content-size);
+
+        max-width: px-to-rem(866);
+        transform: translate(#{px-to-rem(30)}, -20%);
+      
+        @media (min-width: 1441px) {
+          left: unset;
+          right: var(--wrap-1);
+          transform: translate(40%, -20%);
+        }
+      }
+
+      @include viewport-tablet {
+        top: px-to-rem(90);
+  
+        transform: translate(#{px-to-rem(0)}, -20%);
+      }
+    }
+
+    //.frame__img__container 
+    &__container { 
+      @include viewport-tablet-min {
+        width: 100%;
+        padding-top: 58.513%;
+      }
+  
+  
+      img {
+        @include viewport-tablet-min {
+          @include absolute-fullsize;
+          object-fit: contain;
+        }
+        @include viewport-phone {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+  
+  
+  //.frame__content 
+  &__content {
+    position: relative;
+    z-index: 1;
+
+    @include viewport-tablet-min {
+      max-width: var(--content-size);
+    }
+
+    @at-root .frame.follow & {
+      @include viewport-tablet-min {
+        max-width: px-to-rem(960);
+      }
+    }
+
+    > * + * {
+      margin-top: px-to-rem(40);
+      
+      @at-root .frame.follow & {
+        @include viewport-tablet-min {
+          margin-top: px-to-rem(80);
+        }
+      }
+    }
+  }
+  
+  //.frame__title 
+  &__title {
+    @include text-heading-2;
+
+    @at-root .frame.follow & {
+      @include viewport-tablet-min {
+        margin-top: px-to-rem(50);
+        max-width: var(--content-size);
+      }
+    }
+  }
+  
+  //.frame__description 
+  &__description {
+    font-weight: 500;
+    line-height: 150%;
+    font-size: px-to-rem(16);
+
+    @include viewport-desktop {
+      max-width: px-to-rem(500);
+    }
+
+    @include viewport-tablet {
+      max-width: px-to-rem(420);
+    }
+
+    @at-root .frame.follow & {
+      max-width: unset;
+
+      @include viewport-tablet-min {
+        font-size: px-to-rem(27);
+      }
+      @include viewport-phone {
+        font-size: px-to-rem(20);
+      }
+    }
+  }
+}

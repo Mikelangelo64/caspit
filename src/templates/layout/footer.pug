@@ -1,0 +1,70 @@
+-
+  const menuFooterList = [
+    {
+      name: 'Petrochemicals',
+      href: '#',
+      goto: '.petrochemicals'
+    },
+    {
+      name: 'Financing',
+      href: '#',
+      goto: '.financing'
+    },
+    {
+      name: 'Solar energy',
+      href: '#',
+      goto: '.solar-energy'
+    },
+    {
+      name: 'Fertilizers',
+      href: '#',
+      goto: '.fertilizers'
+    },
+    {
+      name: 'Logistics',
+      href: '#',
+      goto: '.logistics'
+    },
+    {
+      name: 'Contact us',
+      href: '#',
+      goto: '.how-contact'
+    }
+  ];
+
+footer.footer
+  ._container.footer__container
+    .footer__wrapper
+      nav.footer-menu
+        ul.footer-menu-list
+          .footer-menu-list__column
+            each item, index in menuFooterList
+              if index < 3
+                li.footer-menu-list__item
+                  a.footer__link(
+                    class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+                    href=`${item.href}`,
+                    data-goto=`${item.goto}`
+                  ) #{ item.name }
+
+          .footer-menu-list__column
+            each item, index in menuFooterList
+              if index > 2
+                li.footer-menu-list__item
+                  a.footer__link(
+                    class=`${item.goto !== 'false' ? 'anchor' : ''}`,
+                    href=`${item.href}`,
+                    data-goto=`${item.goto}`
+                  ) #{ item.name }
+
+      .footer__impulse
+        p by
+        a(
+          href='https://impulse-design.com.ua/',
+          target='_blank',
+          rel='noreferrer'
+        ) 
+          img(
+            src=require('@/assets/img/impulse-logo.png'),
+            alt='impulse design'
+          )

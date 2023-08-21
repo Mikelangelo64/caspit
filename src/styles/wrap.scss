@@ -1,0 +1,31 @@
+@import './base';
+
+:root {
+  @include viewport-tablet {
+    --wrap: 4.1vw;
+    --wrap-banner: var(--wrap);
+    //--wrap-1: 14.0625vw;
+    --wrap-1: 9.96vw;
+  }
+  @include viewport-phone {
+    // --wrap: 14.705vw;
+    // --wrap-1: 14.0625vw;
+    
+    // @media (max-width: 550px) {
+    --wrap: 3.125vw;
+    --wrap-banner: var(--wrap);
+    --wrap-1: 12.5vw;
+    // }
+  }
+  
+  --wrap: 5vw;
+  --wrap-1: 9.722vw;
+  --wrap-banner: 9.0277vw;
+
+  @include viewport-desktop {
+    @media (min-width: 1400px) {
+      //--wrap: calc((100vw - 1296px) / 2);
+      --wrap-1: calc((100vw - 1160px) / 2);
+    }
+  }
+}
