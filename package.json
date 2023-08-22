@@ -45,9 +45,7 @@
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
-    "node-marquee": "^3.0.6",
     "normalize.css": "^8.0.1",
-    "swiper": "^10.1.0",
     "vevet": "^2.17.0"
   }
 }
