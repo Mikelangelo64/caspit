@@ -42,7 +42,7 @@ const renderModalAnimation = ({
     const element = additional;
     element.style.opacity = `${easing}`;
     if (parent.classList.contains('popup-menu')) {
-      element.style.transform = `translateX(${(easing - 1) * 100}%)`;
+      element.style.transform = `translateX(${(1 - easing) * 100}%)`;
     } else {
       element.style.transform = `translateY(${(1 - easing) * 2}rem)`;
     }

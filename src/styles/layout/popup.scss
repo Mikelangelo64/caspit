@@ -17,6 +17,17 @@
   transition: background 0.5s ease;
   color: var(--color-black);
 
+  @include viewport-desktop {
+    --wrapper-width: #{px-to-rem(778)};
+  }
+
+  @include viewport-tablet {
+    --wrapper-width: #{px-to-rem(708)};
+  }
+  @include viewport-tablet-min {
+    --wrapper-width: 88.888%;
+  }
+
   //.popup__overlay
   &__overlay {
     @include absolute-fullsize;
@@ -29,6 +40,8 @@
     @include absolute-fullsize;
     z-index: 1;
 
+    display: none;
+
     &::before {
       content: '';
       display: block;
@@ -38,15 +51,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      max-width: px-to-rem(460);
+      max-width: var(--wrapper-width);
   
       background-color: var(--color-white);
   
-      @include viewport-phone {
-        @media (max-width: 550px) {
-          max-width: 88.888%;
-        }
-      }
+      // @include viewport-phone {
+      //   @media (max-width: 550px) {
+      //     max-width: 88.888%;
+      //   }
+      // }
     }
   }
   
@@ -68,6 +81,7 @@
     position: relative;
     z-index: 0;
     width: 100%;
+    max-width: var(--wrapper-width);
     margin: px-to-rem(20) auto;
 
     display: flex;
@@ -77,17 +91,14 @@
     background-color: var(--color-white);
 
     @include viewport-desktop {
-      max-width: px-to-rem(778);
       padding: px-to-rem(54) px-to-rem(74);
     }
           
     @include viewport-tablet {
-      max-width: px-to-rem(708);
       padding: px-to-rem(40) px-to-rem(60);
     }
 
     @include viewport-phone {
-      max-width: 88.888%;
       margin: px-to-rem(30) auto;
       padding: px-to-rem(40) 5.555% px-to-rem(30);
     }

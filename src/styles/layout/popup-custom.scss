@@ -2,6 +2,7 @@
 
 .popup {
   &.popup-menu {
+    --wrapper-width: #{px-to-rem(300)};
     color: var(--color-white);
   }
 
@@ -23,13 +24,25 @@
       }
     }
   }
+
+  //.popup__additional 
+  &__additional {
+    &::before {
+      left: unset;
+      right: 0;
+      background-color: var(--color-black-100);
+    }
+
+    @at-root .popup.popup-menu & {
+      display: block;
+    }
+  }
   
   //.popup__wrapper 
   &__wrapper {
     background-color: var(--color-white);
     
     @at-root .popup.popup-menu & {
-      max-width: px-to-rem(300);
       min-height: calc(100 * var(--vh) - 0.1px);
       justify-content: flex-start;
 

@@ -1,3 +1,5 @@
+import vevet from './config/vevet';
+
 const videoHandler = () => {
   const videoArr = document.querySelectorAll(
     '.video'
@@ -36,6 +38,6 @@ const videoHandler = () => {
   });
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+vevet.pageLoad.onLoaded(() => {
   videoHandler();
 });
