@@ -15,9 +15,9 @@
 
   min-height: calc(var(--vh, 1vh) * 70);
 
-  @include viewport-phone {
-    padding-bottom: 0;
-  }
+  // @include viewport-phone {
+  //   padding-bottom: 0;
+  // }
   
   //.categories__container 
   &__container {
@@ -32,17 +32,17 @@
   
   //.categories__wrapper 
   &__wrapper {
-    &::after {
-      @include viewport-phone {
-        content: '';
-        display: block;
-        width: calc(100% + 2 * var(--wrap));
-        margin-left: calc(-1 * var(--wrap));
-        padding-top: px-to-rem(300);
+    // &::after {
+    //   @include viewport-phone {
+    //     content: '';
+    //     display: block;
+    //     width: calc(100% + 2 * var(--wrap));
+    //     margin-left: calc(-1 * var(--wrap));
+    //     padding-top: px-to-rem(300);
   
-        background-color: rgba(var(--color-black--rgb), 0.7);
-      }
-    }
+    //     background-color: rgba(var(--color-black--rgb), 0.7);
+    //   }
+    // }
   }
   
   //.categories__content 
@@ -60,7 +60,7 @@
     }
 
     @include viewport-phone {
-      margin-bottom: px-to-rem(60);
+      //margin-bottom: px-to-rem(60);
     }
     
     @at-root .categories.reverse & {
@@ -97,6 +97,19 @@
       font-size: px-to-rem(42);
     }
   }
+
+  //.categories__subtitle 
+  &__subtitle {
+    font-size: px-to-rem(20);
+    font-weight: 600;
+
+    @include viewport-tablet-min {
+      margin-top: px-to-rem(52);
+    }
+    @include viewport-phone {
+      margin-top: px-to-rem(42);
+    }
+  }
   
   //.categories__description 
   &__description {
@@ -130,6 +143,50 @@
         }
       }
     }
+
+    > * + * {
+      margin-top: px-to-rem(6);
+    }
+  }
+
+  //.categories__projects__list 
+  &__projects__list {
+    @include reset-ul;
+    margin-top: px-to-rem(20);
+    font-weight: 500;
+    line-height: 150%;
+    font-size: px-to-rem(16);
+
+    @include viewport-desktop {
+      max-width: px-to-rem(460);
+    }
+    @include viewport-tablet {
+      max-width: px-to-rem(370);
+    }
+    @include viewport-phone {
+      max-width: px-to-rem(460);
+    }
+
+    @at-root .categories.reverse & {
+      @include viewport-desktop {
+        max-width: px-to-rem(370);
+      }
+    }
+
+    a {
+      text-decoration: unset;
+      color: var(--color-red-200);
+
+      @include hover-focus-visible {
+        @include non-mobile-device {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    > * + * {
+      margin-top: px-to-rem(6);
+    }
   }
   
   //.categories-bg 
@@ -148,6 +205,7 @@
     }
 
     &::after {
+      content: '';
       display: block;
       position: absolute;
       top: 0;
@@ -167,12 +225,10 @@
       }
 
       @include viewport-desktop {
-        content: '';
         max-width: 50%;
       }
       
       @include viewport-tablet {
-        content: '';
         max-width: 57.9%;
       }
 

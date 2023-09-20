@@ -1,43 +1,83 @@
 -
   const categoriesList = [
     {
-      title: 'Petrochemicals',
-      class: 'petrochemicals',
-      description: `<a href="#" target="_blank" rel="noreferrer">SBPM</a> operates in domain of petrochemicals and fertilizers wholesale, while simultaneously strengthening partnership ties with agribusiness. Recently we've set up a licensed customs warehouse of excise goods plus two warehouses with bulk chemistry in Boryspil (Kyiv) and Rivno. SPBM handles a vehicle fleet of 40 tank-vehicles.`,
+      title: 'Trading',
+      class: 'trading',
+      description: `
+        <p>
+          The basis of the Caspit group business is trading operations (fertilizers, agrarian and petrochemical products).
+        </p>
+        <p>
+          Our advantage is significant competence in the area of forecasting the demand and price growth in the global product markets.
+        </p>
+        <p>
+          Close cooperation with the global manufacturers gives us an opportunity to achieve optimal results for us and our partners.
+        </p>
+      `,
+      list: [
+        'Mainstay Capital LLC. – Central Asia and Middle East countries;',
+        'Wakler DOO – the Balkan region; ',
+        'Overtech Sp.z.o.o. – countries of the European Union; ',
+        'Caspit trade llc. – Ukraine.',
+      ],
       image: '@/assets/img/categories/category-1.jpg'
+    },
+    {
+      title: 'Renewable power engineering',
+      class: 'renewable',
+      description: `
+        <p>
+          Our team successfully implements projects of solar power station construction on a turnkey basis.
+        </p>
+        <p>
+          We are researching and developing the project of green ammonia production. 
+        </p>
+      `,
+      list: [
+        'OngSolar LLC. – our own solar generation; projects implemented on a turnkey basis.'
+      ],
+      image: '@/assets/img/categories/category-2.jpg'
     },
     {
       title: 'Financing',
       class: 'financing',
-      description: `<a href="#" target="_blank" rel="noreferrer">LLC Eximleasing</a> is a financial company that meets the needs of farmers in financing equipment, fertilizers, seed materials, and more.`,
-      image: '@/assets/img/categories/category-2.jpg'
-    },
-    {
-      title: 'Solar energy',
-      class: 'solar-energy',
-      description: `<a href="#" target="_blank" rel="noreferrer">ONG Solar</a> designs, constructs and operates solar power plants for industrial sites.`,
+      description: `
+        <p>
+          The partner financing programs always improve the quality of service provision.
+        </p>
+        <p>
+          We created a convenient and quick system of decision making in terms of financing the agrarian, utilities and production sectors.
+        </p>
+      `,
+      list: [
+        'EximLeasing – a leasing company that has been successfully providing services for more than 10 years;',
+        'Diskorb LLC – involving financing from international institutes, supporting the grant schemes and covering the whole range of works, from audit to receiving funds.',
+      ],
       image: '@/assets/img/categories/category-3.jpg'
     },
     {
-      title: 'Fertilizers',
-      class: 'fertilizers',
+      title: 'Production',
+      class: 'production',
       description: `
-        Own production of 
-        <a href="#" target="_blank" rel="noreferrer">Dunger</a>
-        mineral and organomineral fertilizers in Ukraine
-        <br />
-        <br />
-        <a href="#" target="_blank" rel="noreferrer">Agronovation</a>
-        provides a service for introducing technical ammonia into the soil, the project is being implemented in Kazakhstan
+        <p>
+          Our own production, development of efficient formulas and methods of fertilizer use gives us an opportunity to offer high-quality products at the best prices to our partners.
+        </p>
       `,
+      list: [
+        'Dunger llc – mineral fertilizer production;',
+        'Wakler doo – production of liquid phosphatic fertilizers in cooperation with the Elixir Zorka Serbian manufacturer; basic products (liquid complex fertilizers 10:34).'
+      ],
       image: '@/assets/img/categories/category-4.jpg'
     },
-    {
-      title: 'Logistics',
-      class: 'logistics',
-      description: `Cargo Supply enterprise enables our portfolio companies to ship the LPG units to whatever furthest needed destinations. Company disposes gas carriers and tanks to move bulk chemistry units.`,
-      image: '@/assets/img/categories/category-5.jpg'
-    },
+    //- {
+    //-   title: 'Logistics',
+    //-   class: 'logistics',
+    //-   description: `Cargo Supply enterprise enables our portfolio companies to ship the LPG units to whatever furthest needed destinations. Company disposes gas carriers and tanks to move bulk chemistry units.`,
+    //-   list: [
+    //-     'list',
+    //-   ],
+    //-   image: '@/assets/img/categories/category-5.jpg'
+    //- },
   ];
 
 .categories__list
@@ -64,7 +104,19 @@
               data-animation='fadeInLeft'
             ) #{ item.title }
 
-            p.categories__description.show-animation__item(
+            .categories__description.show-animation__item(
               data-duration='1200',
               data-animation='fadeInLeft'
             )!= item.description
+
+            ul.categories__subtitle.show-animation__item(
+              data-duration='1600',
+              data-animation='fadeInLeft'
+            ) Our projects
+
+            .categories__projects__list.show-animation__item(
+              data-duration='1600',
+              data-animation='fadeInLeft'
+            )
+              each project in item.list
+                li= project
