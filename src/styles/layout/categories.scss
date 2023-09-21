@@ -12,12 +12,14 @@
   overflow: hidden;
 
   color: var(--color-white);
-
+  
   min-height: calc(var(--vh, 1vh) * 70);
-
-  // @include viewport-phone {
-  //   padding-bottom: 0;
-  // }
+  
+  &.reverse {
+    @include viewport-phone {
+      color: var(--color-black);
+    }
+  }
   
   //.categories__container 
   &__container {
@@ -242,6 +244,10 @@
       @at-root .categories.reverse .categories-bg::after {
         right: unset;
         left: 0;
+
+        @include viewport-phone {
+          background-color: rgba(var(--color-white--rgb), 0.7);
+        }
       }
     }
 
