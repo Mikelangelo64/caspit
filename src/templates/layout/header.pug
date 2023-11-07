@@ -1,3 +1,31 @@
+-
+  const dropdownList = [
+    {
+      href: '#',
+      name: 'ONG Solar'
+    },
+    {
+      href: '#',
+      name: 'Caspit Trade'
+    },
+    {
+      href: '#',
+      name: 'Overtech'
+    },
+    {
+      href: '#',
+      name: 'Agronovatsiia'
+    },
+    {
+      href: '#',
+      name: 'EXIM Leasing'
+    },
+    {
+      href: '#',
+      name: 'Discorb'
+    },
+  ];
+
 header.header
   ._container.header__container
     .header__wrapper
@@ -7,6 +35,18 @@ header.header
             p.lang-item.lang-item-current eng
           li
             a.lang-item(href='#') ua
+
+        .dropdown.desktop
+          button.dropdown__header Наші проекти
+
+          ul.dropdown-list
+            each item in dropdownList
+              li.dropdown-list__item
+                a.dropdown-list__link(
+                  href=`${item.href}`,
+                  target='_blank',
+                  rel='noreferrer'
+                )= item.name
 
       .header__item.half
         a.header__phone(href='tel:+35722052918') +357 220 529 18

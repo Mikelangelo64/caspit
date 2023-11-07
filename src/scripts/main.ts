@@ -1,5 +1,6 @@
 import anchorsInit from './anchor/init';
 import initPopups from './popup/init';
+import projectToggle from './projectToggle/init';
 import scrollBarInit from './scrollbar';
 import showAnimationInit from './showAnimation/init';
 
@@ -79,5 +80,7 @@ export const init = () => {
     //   },
     //   false
     // );
+
+    projectToggle();
   }
 };

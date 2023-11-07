@@ -47,4 +47,16 @@ nav.menu
           data-goto=`${item.goto}`
         ) #{ item.name }
 
+  .dropdown.mobile
+    p.dropdown__header Наші проекти
+
+    ul.dropdown-list
+      each item in dropdownList
+        li.dropdown-list__item
+          a.dropdown-list__link(
+            href=`${item.href}`,
+            target='_blank',
+            rel='noreferrer'
+          )= item.name
+
   a.menu__link.menu__address(href='#') 17 Ifigeneias Street 2007 Strovolos, Nicosia Cyprus
